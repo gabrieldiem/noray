@@ -1,0 +1,11 @@
+services:
+  noray-server:
+    container_name: noray-server
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: noray-server-image:latest
+    network_mode: host
+    env_file:
+      - .env
+    restart: unless-stopped
